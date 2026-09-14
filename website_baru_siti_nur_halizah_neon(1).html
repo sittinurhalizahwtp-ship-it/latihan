@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Siti Nur Halizah</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ min-height:100vh;display:flex;justify-content:center;align-items:center;
+ font-family:Arial,sans-serif;color:white;overflow:hidden;
+ background:linear-gradient(135deg,#16002b,#3b0066,#ff1493,#21004d);
+ background-size:400% 400%;animation:bg 12s ease infinite;
+}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.container{
+ width:92%;max-width:900px;text-align:center;padding:45px 25px;
+ border-radius:35px;background:rgba(255,255,255,.10);
+ border:2px solid rgba(255,255,255,.25);backdrop-filter:blur(18px);
+ box-shadow:0 0 25px #ff4dcc,0 0 70px rgba(139,0,255,.5);
+ position:relative;z-index:2;
+}
+.judul{
+ font-size:clamp(28px,6vw,48px);font-weight:bold;margin-bottom:30px;
+ color:#fff;text-shadow:0 0 8px #fff,0 0 20px #ff4dcc,0 0 40px #a100ff;
+}
+.running-text{
+ overflow:hidden;white-space:nowrap;padding:18px 0;
+ border-top:2px solid #ff69d2;border-bottom:2px solid #ff69d2;
+ box-shadow:0 0 15px #ff1493;
+}
+.teks{
+ display:inline-block;padding-left:100%;font-size:clamp(20px,4vw,30px);
+ font-weight:bold;color:#fff;animation:jalan 12s linear infinite;
+ text-shadow:0 0 8px #ff69d2,0 0 18px #a100ff;
+}
+@keyframes jalan{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.info{margin-top:30px;font-size:clamp(17px,3vw,22px);line-height:2}
+.info span{color:#ffd6f5;font-weight:bold;text-shadow:0 0 10px #ff4dcc}
+.footer{margin-top:28px;color:#f5c8ff;font-size:16px}
+.bintang{
+ position:absolute;width:5px;height:5px;border-radius:50%;background:white;
+ box-shadow:0 0 12px #fff,0 0 25px #ff69d2;
+ animation:kelip 2s infinite alternate,gerak 6s infinite ease-in-out;
+}
+@keyframes kelip{from{opacity:.2;transform:scale(.6)}to{opacity:1;transform:scale(1.5)}}
+@keyframes gerak{50%{translate:15px -20px}}
+.b1{top:8%;left:10%}.b2{top:18%;left:85%}.b3{top:75%;left:8%}
+.b4{top:86%;left:90%}.b5{top:30%;left:50%}.b6{top:65%;left:75%}
+</style>
+</head>
+<body>
+<div class="bintang b1"></div><div class="bintang b2"></div>
+<div class="bintang b3"></div><div class="bintang b4"></div>
+<div class="bintang b5"></div><div class="bintang b6"></div>
+
+<div class="container">
+ <div class="judul">💜✨ WEBSITE SAYA ✨💜</div>
+ <div class="running-text">
+  <div class="teks">🚀 SELAMAT DATANG DI SMK 5 BONE 🚀 &nbsp;&nbsp; 💻 JURUSAN TJKT 💻 &nbsp;&nbsp; 🌟 WELCOME 🌟</div>
+ </div>
+ <div class="info">
+  👩‍💻 Nama : <span>Siti Nur Halizah</span><br>
+  🏫 Sekolah : <span>SMK 5 Bone</span><br>
+  💻 Jurusan : <span>Teknik Jaringan Komputer dan Telekomunikasi</span>
+ </div>
+ <div class="footer">🌟 Belajar • Berkarya • Berprestasi • Sukses 🌟</div>
+</div>
+</body>
+</html>
