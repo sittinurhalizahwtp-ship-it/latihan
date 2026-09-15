@@ -1,11 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kalkulatornya Lisa</title>
+    <title>Kalkulator Gojo Lisa</title>
 
     <style>
         * {
@@ -20,70 +18,49 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #000;
-            color: #00aaff;
-            padding: 20px;
+            background: #050505;
+            color: white;
         }
 
         .calculator {
-            width: 360px;
-            padding: 22px;
-            border-radius: 30px;
-            background: #080808;
+            width: 340px;
+            padding: 20px;
+            border-radius: 25px;
+            background: #0d0d0d;
             border: 2px solid #008cff;
-            box-shadow:
-                0 0 15px #008cff,
-                0 0 40px rgba(0, 140, 255, 0.35);
+            box-shadow: 0 0 30px #006eff;
         }
 
-        /* GAMBAR GOJO */
-        .gojo {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #00aaff;
-            box-shadow: 0 0 20px #008cff;
-        }
-
-        .gojo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .title {
+        h1 {
             text-align: center;
-            margin-bottom: 18px;
-        }
-
-        .title h1 {
             color: #00aaff;
+            margin-bottom: 15px;
             font-size: 25px;
             text-shadow: 0 0 10px #008cff;
         }
 
-        .title p {
-            margin-top: 6px;
-            font-size: 12px;
-            color: #5fcaff;
-            letter-spacing: 2px;
+        .gojo {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            border: 2px solid #008cff;
         }
 
-        .display {
+        #display {
             width: 100%;
-            height: 75px;
-            border: 2px solid #0077cc;
-            border-radius: 18px;
-            background: #000;
-            color: #00b7ff;
-            font-size: 30px;
-            text-align: right;
-            padding: 12px;
+            height: 65px;
+            margin-bottom: 15px;
+            border: none;
             outline: none;
-            margin-bottom: 18px;
-            box-shadow: inset 0 0 15px rgba(0, 140, 255, 0.25);
+            border-radius: 15px;
+            background: #181818;
+            color: #00b7ff;
+            text-align: right;
+            padding: 10px 15px;
+            font-size: 28px;
+            box-shadow: inset 0 0 10px #006eff;
         }
 
         .buttons {
@@ -94,44 +71,34 @@
 
         button {
             height: 60px;
-            border-radius: 16px;
-            border: 1px solid #006dcc;
-            background: #101010;
-            color: #00aaff;
-            font-size: 20px;
-            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            background: #151515;
+            color: white;
+            font-size: 21px;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 0 8px rgba(0, 140, 255, 0.2);
+            box-shadow: 0 0 5px #008cff;
         }
 
         button:hover {
-            background: #00243b;
-            box-shadow: 0 0 15px #008cff;
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: scale(0.92);
+            background: #008cff;
+            color: black;
+            transform: scale(1.05);
         }
 
         .operator {
-            background: #003b66;
-            color: #00c8ff;
-            border-color: #00aaff;
+            color: #00aaff;
         }
 
         .clear {
-            background: #250909;
-            color: #ff3b3b;
-            border-color: #ff3333;
+            color: #ff4d4d;
         }
 
         .equal {
-            grid-column: span 2;
-            background: #005c99;
-            color: white;
-            border-color: #00b7ff;
+            background: #008cff;
+            color: black;
+            font-weight: bold;
         }
 
         .zero {
@@ -140,15 +107,10 @@
 
         .footer {
             text-align: center;
-            margin-top: 18px;
-            color: #168dcc;
-            font-size: 11px;
+            margin-top: 15px;
+            color: #777;
+            font-size: 12px;
         }
-
-        .footer span {
-            color: #00b7ff;
-        }
-
     </style>
 </head>
 
@@ -156,76 +118,58 @@
 
 <div class="calculator">
 
-    <!-- FOTO GOJO -->
-    <div class="gojo">
-        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477"
-             alt="Gojo Satoru">
-    </div>
+    <h1>⚡ KALKULATOR GOJO LISA ⚡</h1>
 
-    <!-- JUDUL -->
-    <div class="title">
-        <h1>💙 Kalkulatornya Lisa 💙</h1>
-        <p>GOJO SATORU EDITION</p>
-    </div>
+    <!-- Ganti URL gambar ini jika ingin memakai gambar Gojo lain -->
+    <img class="gojo"
+         src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80"
+         alt="Gojo">
 
-    <!-- LAYAR -->
-    <input
-        type="text"
-        id="display"
-        class="display"
-        value="0"
-        readonly
-    >
+    <input type="text" id="display" value="0" disabled>
 
-    <!-- TOMBOL -->
     <div class="buttons">
 
-        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="clear" onclick="clearDisplay()">AC</button>
         <button onclick="deleteNumber()">⌫</button>
-        <button onclick="append('%')">%</button>
-        <button class="operator" onclick="append('/')">÷</button>
+        <button class="operator" onclick="add('%')">%</button>
+        <button class="operator" onclick="add('/')">÷</button>
 
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button class="operator" onclick="append('*')">×</button>
+        <button onclick="add('7')">7</button>
+        <button onclick="add('8')">8</button>
+        <button onclick="add('9')">9</button>
+        <button class="operator" onclick="add('*')">×</button>
 
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button class="operator" onclick="append('-')">−</button>
+        <button onclick="add('4')">4</button>
+        <button onclick="add('5')">5</button>
+        <button onclick="add('6')">6</button>
+        <button class="operator" onclick="add('-')">−</button>
 
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-        <button class="operator" onclick="append('+')">+</button>
+        <button onclick="add('1')">1</button>
+        <button onclick="add('2')">2</button>
+        <button onclick="add('3')">3</button>
+        <button class="operator" onclick="add('+')">+</button>
 
-        <button class="zero" onclick="append('0')">0</button>
-        <button onclick="append('.')">.</button>
-
+        <button class="zero" onclick="add('0')">0</button>
+        <button onclick="add('.')">.</button>
         <button class="equal" onclick="calculate()">=</button>
 
     </div>
 
     <div class="footer">
-        ⚡ <span>Lisa × Gojo</span> | Dark Blue Calculator
+        ✦ Dibuat untuk Lisa • SMK 5 Bone • TJKT ✦
     </div>
 
 </div>
 
-
 <script>
+    let display = document.getElementById("display");
 
-    const display = document.getElementById("display");
-
-    function append(value) {
-
-        if (display.value === "0" && !isNaN(value)) {
+    function add(value) {
+        if (display.value === "0") {
             display.value = value;
         } else {
             display.value += value;
         }
-
     }
 
     function clearDisplay() {
@@ -233,74 +177,25 @@
     }
 
     function deleteNumber() {
+        display.value = display.value.slice(0, -1);
 
-        if (display.value.length > 1) {
-            display.value = display.value.slice(0, -1);
-        } else {
+        if (display.value === "") {
             display.value = "0";
         }
-
     }
 
     function calculate() {
-
         try {
+            let result = display.value
+                .replace(/÷/g, "/")
+                .replace(/×/g, "*");
 
-            let expression =
-                display.value.replace(/%/g, "/100");
-
-            let result =
-                Function('"use strict"; return (' +
-                expression +
-                ')')();
-
-            if (!isFinite(result)) {
-                display.value = "Error";
-            } else {
-                display.value = result;
-            }
-
+            display.value = eval(result);
         } catch {
-
             display.value = "Error";
-
         }
-
     }
-
-    // Keyboard support
-    document.addEventListener("keydown", function(event) {
-
-        const key = event.key;
-
-        if (
-            (key >= "0" && key <= "9") ||
-            key === "+" ||
-            key === "-" ||
-            key === "*" ||
-            key === "/" ||
-            key === "." ||
-            key === "%"
-        ) {
-            append(key);
-        }
-
-        if (key === "Enter") {
-            calculate();
-        }
-
-        if (key === "Backspace") {
-            deleteNumber();
-        }
-
-        if (key === "Escape") {
-            clearDisplay();
-        }
-
-    });
-
 </script>
 
 </body>
 </html>
-```
